@@ -3,13 +3,14 @@
 import {
   Award, BarChart, Briefcase, Calendar, CheckCircle, Clock, Coins, Factory,
   Globe, HeartHandshake, HelpCircle, LifeBuoy, Linkedin, LocateFixed, Lock,
-  Mail, Phone, Rocket, ShieldCheck, Sparkles, Star, Target, ThumbsUp,MapPin,
+  Mail, Phone, Rocket, ShieldCheck, Sparkles, Star, Target, ThumbsUp, MapPin,
   TrendingUp, UserCheck, Verified, Waves, UserCircle2, Quote, MessageSquare, XCircle, Building2, Network, Diamond, ArrowLeft, ArrowRight, Zap, AlertTriangle, Facebook, Instagram, Twitter
 } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TestimonialCarousel } from '@/components/testimonial-carousel'
+import { useState } from 'react'
 
 const testimonialsData = [
   {
@@ -45,6 +46,44 @@ const testimonialsData = [
 ]
 
 export default function Home() {
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setIsSubscribing(true);
+    const email = e.target.email.value;
+    
+    console.log('Attempting to subscribe:', email);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      console.log('Response status:', response.status);
+      const data = await response.json();
+      console.log('Response data:', data);
+      
+      if (response.ok) {
+        alert(data.message || 'Thank you for subscribing!');
+        e.target.reset();
+      } else {
+        console.error('Subscription failed:', data);
+        alert(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Subscription error:', {
+        message: error.message,
+        error
+      });
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
     <>
       <header>
@@ -553,37 +592,37 @@ export default function Home() {
 
           <div className="services-grid">
             <div className="service-card">
-              <div className="service-icon"><ShieldCheck /></div>
+              <div className="service-icon google-red"><ShieldCheck className="google-red" /></div>
               <h3>Emergency Suspension Recovery</h3>
-              <p>Expert help for suspended profiles: I quickly identify the root cause, guide you through the right steps, and maximize your chances of a successful reinstatement using proven Google compliance strategies.</p>
+              <p>Fast-track recovery for suspended profiles using advanced appeal strategies and direct Google contacts.</p>
             </div>
 
             <div className="service-card">
-              <div className="service-icon"><CheckCircle /></div>
+              <div className="service-icon google-blue"><CheckCircle className="google-blue" /></div>
               <h3>Express Verification Services</h3>
               <p>Skip the waiting and get your business verified quickly through proven methods.</p>
             </div>
 
             <div className="service-card">
-              <div className="service-icon"><Factory /></div>
+              <div className="service-icon google-yellow"><Factory className="google-yellow" /></div>
               <h3>Bulk Location Management</h3>
-              <p>Specialized support for businesses with 10+ locations: I prepare your accounts for bulk verification, clean up inconsistencies, and ensure you meet all of Google’s eligibility criteria for fast, hassle-free approval.</p>
+              <p>Enterprise solutions for businesses with multiple locations and franchise operations.</p>
             </div>
 
             <div className="service-card">
-              <div className="service-icon"><MapPin /></div>
+              <div className="service-icon google-green"><MapPin className="google-green" /></div>
               <h3>India Region Specialist</h3>
               <p>Specialized services for Indian businesses facing unique verification and compliance challenges.</p>
             </div>
 
             <div className="service-card">
-              <div className="service-icon"><Target /></div>
+              <div className="service-icon google-blue"><Target className="google-blue" /></div>
               <h3>Profile Optimization & SEO</h3>
               <p>Complete optimization to maximize visibility, rankings, and customer engagement.</p>
             </div>
 
             <div className="service-card">
-              <div className="service-icon"><BarChart /></div>
+              <div className="service-icon google-red"><BarChart className="google-red" /></div>
               <h3>Google Ads Integration</h3>
               <p>High-converting Google Ads campaigns designed to drive sales, walk-ins, and brand awareness.</p>
             </div>
@@ -603,9 +642,22 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title" style={{ color: 'white' }}>Stay Ahead of Google's Updates</h2>
           <p className="section-subtitle" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Subscribe to my newsletter for exclusive tips on GBP, local SEO, and suspension prevention.</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" className="newsletter-input" />
-            <button type="submit" className="newsletter-btn">Subscribe</button>
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter your email" 
+              className="newsletter-input"
+              required 
+              disabled={isSubscribing}
+            />
+            <button 
+              type="submit" 
+              className="newsletter-btn"
+              disabled={isSubscribing}
+            >
+              {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+            </button>
           </form>
         </div>
       </section>
@@ -675,7 +727,7 @@ export default function Home() {
                 <a href="https://www.linkedin.com/in/reddysohan/" aria-label="LinkedIn"><Linkedin size={28} /></a>
                 <a href="https://www.facebook.com/sohan.reddy.716" aria-label="Facebook"><Facebook size={28} /></a>
                 <a href="https://www.instagram.com/reddy_sohan/" aria-label="Instagram"><Instagram size={28} /></a>
-                <a href="https://x.com/reddy__sohan" aria-label="Twitter"><Twitter size={28} /></a>
+                <a href="https://x.com/reddy__sohan" aria-label="X (formerly Twitter)"><Twitter size={28} /></a>
                 <a href="mailto:Reachsohanreddy@gmail.com" aria-label="Email"><Mail size={28} /></a>
               </div>
             </div>

@@ -919,15 +919,51 @@ nav {
 }
 
 .service-icon {
-    width: 56px;
-    height: 56px;
-    background: hsl(var(--primary));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: hsl(var(--primary-foreground));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.service-icon.google-blue {
+  background: rgba(66, 133, 244, 0.1);
+}
+
+.service-icon.google-red {
+  background: rgba(234, 67, 53, 0.1);
+}
+
+.service-icon.google-yellow {
+  background: rgba(251, 188, 5, 0.1);
+}
+
+.service-icon.google-green {
+  background: rgba(52, 168, 83, 0.1);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-card:hover .service-icon.google-blue {
+  background: rgba(66, 133, 244, 0.2);
+}
+
+.service-card:hover .service-icon.google-red {
+  background: rgba(234, 67, 53, 0.2);
+}
+
+.service-card:hover .service-icon.google-yellow {
+  background: rgba(251, 188, 5, 0.2);
+}
+
+.service-card:hover .service-icon.google-green {
+  background: rgba(52, 168, 83, 0.2);
 }
 
 .service-card h3 {
@@ -1203,21 +1239,53 @@ footer {
   align-items: center;
   margin-top: 1.2rem;
 }
+/* Social Media Brand Colors */
+.footer-social-grid a[aria-label="WhatsApp"]:hover {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+}
+
+.footer-social-grid a[aria-label="LinkedIn"]:hover {
+  color: #0A66C2;
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.footer-social-grid a[aria-label="Facebook"]:hover {
+  color: #1877F2;
+  background: rgba(24, 119, 242, 0.1);
+}
+
+.footer-social-grid a[aria-label="Instagram"]:hover {
+  color: #E4405F;
+  background: rgba(228, 64, 95, 0.1);
+}
+
+/* Update X (formerly Twitter) styles */
+.footer-social-grid a[aria-label="X (formerly Twitter)"]:hover {
+  color: #1DA1F2;
+  background: rgba(29, 161, 242, 0.1);
+}
+
+.footer-social-grid a[aria-label="Email"]:hover {
+  color: #EA4335;
+  background: rgba(234, 67, 53, 0.1);
+}
+
+/* Update base social icon styles */
 .footer-social-grid a {
   display: flex;
   align-items: center;
   justify-content: center;
   color: hsl(var(--muted-foreground));
-  background: none;
+  background: transparent;
   border-radius: 50%;
   transition: color 0.2s, background 0.2s, transform 0.2s;
   font-size: 1.5rem;
   width: 40px;
   height: 40px;
 }
+
 .footer-social-grid a:hover {
-  color: #4285F4;
-  background: rgba(66,133,244,0.08);
   transform: scale(1.15) rotate(-8deg);
 }
 
