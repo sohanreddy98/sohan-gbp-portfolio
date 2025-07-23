@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <div
       className="switch"
-      data-isOn={theme === 'dark'}
+      data-ison={theme === 'dark'}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <motion.div className="handle" layout transition={spring}>

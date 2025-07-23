@@ -4,7 +4,7 @@ import {
   Award, BarChart, Briefcase, Calendar, CheckCircle, Clock, Coins, Factory,
   Globe, HeartHandshake, HelpCircle, LifeBuoy, Linkedin, LocateFixed, Lock,
   Mail, Phone, Rocket, ShieldCheck, Sparkles, Star, Target, ThumbsUp,MapPin,
-  TrendingUp, UserCheck, Verified, Waves, UserCircle2, Quote, MessageSquare, XCircle, Building2, Network, Diamond, ArrowLeft, ArrowRight, Zap, AlertTriangle
+  TrendingUp, UserCheck, Verified, Waves, UserCircle2, Quote, MessageSquare, XCircle, Building2, Network, Diamond, ArrowLeft, ArrowRight, Zap, AlertTriangle, Facebook, Instagram, Twitter
 } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
@@ -62,7 +62,7 @@ export default function Home() {
               <li><a href="#contact">Contact</a></li>
             </ul>
             <div className="cta-header">
-              <a href="https://wa.me/+911234567890" className="whatsapp-btn">
+              <a href="https://wa.me/+918828216807" className="whatsapp-btn">
                 <Phone size={16} /> WhatsApp
               </a>
               <a href="https://www.linkedin.com/in/reddysohan/" className="linkedin-btn">
@@ -82,14 +82,14 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Sohan Reddy | GBP Expert</h1>
-            <div className="hero-subtitle">Suspension Recovery • Verification Specialist • Bulk Management</div>
+            <h1>Sohan Reddy | Google Business Profile Expert</h1>
+            <div className="hero-subtitle">Suspension Recovery • Bulk Management</div>
             <p className="hero-description">I'm Sohan Reddy, a top-rated expert dedicated to solving your most complex Google Business Profile challenges—from rapid suspension recovery to strategic optimization for maximum local visibility.</p>
             <div className="hero-cta">
               <a href="#contact" className="cta-primary">
                 <ShieldCheck size={20} /> Get Free Expert Analysis
               </a>
-              <a href="https://wa.me/+911234567890" className="cta-secondary">
+              <a href="https://wa.me/+918828216807" className="cta-secondary">
                 <MessageSquare size={20} /> WhatsApp Me Now
               </a>
             </div>
@@ -103,13 +103,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <TrendingUp size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-blue">
+                    <TrendingUp size={36} className="stat-icon google-blue" />
                   </div>
                   <h3 className="stat-number">2,500+</h3>
                   <p className="stat-title">Profiles Recovered</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-blue">
                   <h4>Proven Recovery</h4>
                   <p>Restoring your business's lifeline with a proven track record of success against any suspension type.</p>
                 </div>
@@ -118,13 +118,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <UserCheck size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-red">
+                    <UserCheck size={36} className="stat-icon google-red" />
                   </div>
                   <h3 className="stat-number">850+</h3>
                   <p className="stat-title">Businesses Verified</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-red">
                   <h4>Verification Mastery</h4>
                   <p>Navigating the complexities of verification to get your business on the map, fast and hassle-free.</p>
                 </div>
@@ -133,13 +133,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <ThumbsUp size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-yellow">
+                    <ThumbsUp size={36} className="stat-icon google-yellow" />
                   </div>
                   <h3 className="stat-number">98.7%</h3>
                   <p className="stat-title">Success Rate</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-yellow">
                   <h4>Consistent Results</h4>
                   <p>An industry-leading success rate means peace of mind and dependable outcomes for your business.</p>
                 </div>
@@ -148,13 +148,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <Clock size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-green">
+                    <Clock size={36} className="stat-icon google-green" />
                   </div>
                   <h3 className="stat-number">24-48h</h3>
                   <p className="stat-title">Average Recovery</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-green">
                   <h4>Speed & Urgency</h4>
                   <p>Minimizing your downtime and revenue loss by getting your profile back online with incredible speed.</p>
                 </div>
@@ -163,13 +163,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <Globe size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-blue">
+                    <Globe size={36} className="stat-icon google-blue" />
                   </div>
                   <h3 className="stat-number">India</h3>
                   <p className="stat-title">Verification Specialist</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-blue">
                   <h4>Specialized Expertise</h4>
                   <p>Deep knowledge of regional verification challenges ensures your business gets listed correctly in India.</p>
                 </div>
@@ -178,14 +178,14 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <Briefcase size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-red">
+                    <Briefcase size={36} className="stat-icon google-red" />
                   </div>
                   <h3 className="stat-number">100+</h3>
                   <p className="stat-title">Multi-Location Clients</p>
                 </div>
-                <div className="stat-back">
-                  <h4>Enterpriseaaa Ready</h4>
+                <div className="stat-back google-red">
+                  <h4>Enterprise Ready</h4>
                   <p>Expertly managing GBP for franchises and businesses with 100+ locations, ensuring brand consistency at scale.</p>
                 </div>
               </div>
@@ -193,13 +193,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <Star size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-yellow">
+                    <Star size={36} className="stat-icon google-yellow" />
                   </div>
-                  <h3 className="stat-number">5-Star</h3>
+                  <h3 className="stat-number">4.9-Star</h3>
                   <p className="stat-title">Client Rating</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-yellow">
                   <h4>Exceptional Service</h4>
                   <p>Committed to excellence, reflected in consistent 5-star feedback from satisfied clients worldwide.</p>
                 </div>
@@ -208,13 +208,13 @@ export default function Home() {
             <div className="stat-item">
               <div className="stat-item-inner">
                 <div className="stat-front">
-                  <div className="stat-icon-wrapper">
-                    <Calendar size={36} className="stat-icon" />
+                  <div className="stat-icon-wrapper google-green">
+                    <Calendar size={36} className="stat-icon google-green" />
                   </div>
                   <h3 className="stat-number">8+</h3>
                   <p className="stat-title">Years Experience</p>
                 </div>
-                <div className="stat-back">
+                <div className="stat-back google-green">
                   <h4>Seasoned Expertise</h4>
                   <p>Leveraging nearly a decade of focused experience to navigate any GBP challenge with confidence and precision.</p>
                 </div>
@@ -225,6 +225,15 @@ export default function Home() {
             <p className="achievements-title">Trusted by leading agencies and businesses worldwide</p>
             <div className="marquee">
               <div className="marquee-content" aria-hidden="true">
+                <span><Rocket size={20} /> Apex Digital</span>
+                <span><Building2 size={20} /> Summit SEO</span>
+                <span><Factory size={20} /> QuantumLeap</span>
+                <span><Network size={20} /> Momentum Inc.</span>
+                <span><Diamond size={20} /> NextGen Corp</span>
+                <span><Briefcase size={20} /> Innovate AI</span>
+                <span><Globe size={20} /> Global Reach</span>
+                <span><TrendingUp size={20} /> Peak Performance</span>
+                {/* Duplicate for seamless loop */}
                 <span><Rocket size={20} /> Apex Digital</span>
                 <span><Building2 size={20} /> Summit SEO</span>
                 <span><Factory size={20} /> QuantumLeap</span>
@@ -260,7 +269,7 @@ export default function Home() {
             <div className="about-content">
               <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>A Passion for Solving Google's Toughest Challenges.</h2>
               <p className="section-subtitle" style={{ textAlign: 'left', maxWidth: '100%', marginBottom: '2rem' }}>
-                For over a decade, I've been navigating the complex and ever-changing landscape of Google Business Profile. My journey began with a simple goal: to help businesses claim their rightful space in the digital world. Today, as a Google Gold Product Expert, I've had the privilege of restoring thousands of profiles, verifying businesses across the globe, and empowering companies to thrive in local search.
+                For over a decade, I've been navigating the complex and ever-changing landscape of Google Business Profile. My journey began with a simple goal: to help businesses claim their rightful space in the digital world. Today, as a Google Product Expert, I've had the privilege of restoring thousands of profiles, verifying businesses across the globe, and empowering companies to thrive in local search.
               </p>
               <p>
                 My approach is a blend of technical expertise, strategic thinking, and a relentless pursuit of solutions. I don't just fix problems; I build resilient, optimized presences that stand the test of time and algorithm updates. When you work with me, you're not just getting a consultant—you're getting a dedicated partner committed to your success.
@@ -277,37 +286,37 @@ export default function Home() {
 
           <div className="problems-grid">
             <div className="problem-card">
-              <div className="problem-icon"><XCircle /></div>
+              <div className="problem-icon google-red"><XCircle className="google-red" /></div>
               <h3>Profile Suspended Without Warning</h3>
               <p>Your Google Business Profile got suspended and you're losing customers every day. Traditional appeals take weeks or get rejected. I specialize in fast-track suspension recovery with proven strategies that work.</p>
             </div>
 
             <div className="problem-card">
-              <div className="problem-icon"><HelpCircle /></div>
+              <div className="problem-icon google-blue"><HelpCircle className="google-blue" /></div>
               <h3>Verification Stuck in Processing</h3>
               <p>Waiting weeks for Google to verify your business? Phone verification not working? Postcard never arrived? I have direct methods to expedite verification for any business type.</p>
             </div>
 
             <div className="problem-card">
-              <div className="problem-icon"><Factory /></div>
+              <div className="problem-icon google-yellow"><Factory className="google-yellow" /></div>
               <h3>Managing 10+ Locations</h3>
               <p>Chain businesses and franchises struggle with bulk verification and management. I provide enterprise-level solutions with streamlined processes for unlimited locations.</p>
             </div>
 
             <div className="problem-card">
-              <div className="problem-icon"><Phone /></div>
+              <div className="problem-icon google-green"><Phone className="google-green" /></div>
               <h3>Phone Verification Issues (India)</h3>
               <p>Phone numbers stuck in verification loop, especially in India? I have specialized solutions for Indian businesses and know exactly how to resolve regional verification challenges.</p>
             </div>
 
             <div className="problem-card">
-              <div className="problem-icon"><TrendingUp /></div>
+              <div className="problem-icon google-blue"><TrendingUp className="google-blue" /></div>
               <h3>Poor Local Search Ranking</h3>
               <p>Your competitors appear first in local search while you're invisible? I optimize profiles for maximum visibility, better rankings, and increased customer actions.</p>
             </div>
 
             <div className="problem-card">
-              <div className="problem-icon"><Coins /></div>
+              <div className="problem-icon google-red"><Coins className="google-red" /></div>
               <h3>Google Ads Not Converting</h3>
               <p>Spending money on Google Ads but not getting quality leads? I create high-converting ad campaigns integrated with optimized Business Profiles for maximum ROI.</p>
             </div>
@@ -325,22 +334,22 @@ export default function Home() {
           <p className="section-subtitle">My expertise is backed by industry-recognized achievements and a commitment to excellence.</p>
           <div className="recognition-grid">
             <div className="badge-card">
-              <div className="badge-icon-wrapper">
-                <Award size={32} />
+              <div className="badge-icon-wrapper google-blue">
+                <Award className="google-blue" size={32} />
               </div>
-              <h3 className="badge-title">Gold Product Expert</h3>
+              <h3 className="badge-title">Google Product Expert</h3>
               <p className="badge-description">Officially recognized by Google for exceptional product mastery. This prestigious status is held by less than 1% of experts worldwide.</p>
             </div>
             <div className="badge-card">
-              <div className="badge-icon-wrapper">
-                <HeartHandshake size={32} />
+              <div className="badge-icon-wrapper google-red">
+                <HeartHandshake className="google-red" size={32} />
               </div>
               <h3 className="badge-title">Official Google Partner</h3>
               <p className="badge-description">A verified partner with demonstrated ad skill and expertise, meeting Google's high standards for client growth and performance.</p>
             </div>
             <div className="badge-card">
-              <div className="badge-icon-wrapper">
-                <Rocket size={32} />
+              <div className="badge-icon-wrapper google-yellow">
+                <Rocket className="google-yellow" size={32} />
               </div>
               <h3 className="badge-title">Top Rated Plus on Upwork</h3>
               <p className="badge-description">Achieved Top Rated Plus status, representing the top 3% of talent on the world's largest freelance platform for proven client success.</p>
@@ -349,67 +358,92 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonials">
-        <div className="container">
-          <h2 className="section-title">What My Clients Say</h2>
-          <p className="section-subtitle">Real feedback from business owners I've had the pleasure to work with.</p>
-          <TestimonialCarousel testimonials={testimonialsData} />
-        </div>
-      </section>
-
-      <section className="case-studies">
+      <section id="case-studies" className="case-studies">
         <div className="container">
           <h2 className="section-title">Success Stories That Speak Volumes</h2>
           <p className="section-subtitle">I turn complex problems into powerful results. Here's a closer look at how.</p>
           <div className="case-studies-grid">
+            {/* Success Story 1 */}
             <div className="case-study-card">
-              <div className="case-study-header">
-                <Building2 size={20} className="case-study-icon" />
-                <span>Restaurant Chain</span>
-              </div>
-              <h3 className="case-study-main-title">47 Locations Verified in 3 Days</h3>
+              <h3 className="case-study-main-title">47 Locations Live in 72 Hours</h3>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4><AlertTriangle size={18} /> The Challenge</h4>
-                  <p>A multi-state restaurant chain with 47 new locations was stuck in a verification loop for 8 months. Traditional methods failed repeatedly, costing them millions in lost revenue.</p>
+                  <h4>Client Challenge</h4>
+                  <p>A multi-state restaurant chain with 47 new locations was stuck in a verification loop for over 8 months. Standard methods failed repeatedly, and they were unable to access Google’s bulk verification, resulting in lost local visibility and millions in missed revenue.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4><Zap size={18} /> The Solution</h4>
-                  <p>Leveraged high-level partner support channels, prepared a master verification file, and executed a coordinated submission. All 47 profiles were verified and live within 72 hours.</p>
+                  <h4>What I Did</h4>
+                  <p>I assessed the account’s eligibility, helped restructure the business profile to meet Google’s bulk verification standards, and prepared a master file for submission. With support from high-level partner channels, I escalated and executed a coordinated verification process, bringing all 47 profiles live within 72 hours.</p>
                 </div>
               </div>
             </div>
+            {/* Success Story 2 */}
             <div className="case-study-card">
-              <div className="case-study-header">
-                <Star size={20} className="case-study-icon" />
-                <span>5-Star Hotel</span>
-              </div>
-              <h3 className="case-study-main-title">Negative Review Attack Neutralized</h3>
+              <h3 className="case-study-main-title">Suspended Profiles Reinstated & Account Unlocked</h3>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4><AlertTriangle size={18} /> The Challenge</h4>
-                  <p>A luxury hotel was targeted by a coordinated negative review attack, causing their 5-star rating to plummet to 3.7. Bookings dropped by 60% as trust eroded.</p>
+                  <h4>Client Challenge</h4>
+                  <p>A large business account faced a major roadblock, multiple Google Business Profiles across locations were suddenly suspended, and the account itself was restricted from making further edits or appeals. The client was unclear on the root cause and unable to manually appeal each profile, leading to stalled operations and loss of visibility across markets.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4><Zap size={18} /> The Solution</h4>
-                  <p>Documented the attack pattern and submitted a detailed policy violation report. Over 80 fraudulent reviews were removed, and I helped launch a review generation campaign that restored their rating to 4.8.</p>
+                  <h4>What I Did</h4>
+                  <p>I conducted a deep audit of the account and identified compliance gaps that had triggered the suspension. After cleaning up the account structure and resolving issues across all affected profiles, I guided the client through a streamlined fix. Within days, the account was reinstated and all suspended profiles were verified and live again, restoring full business presence on Google.</p>
                 </div>
               </div>
             </div>
+            {/* Success Story 3 */}
             <div className="case-study-card">
-              <div className="case-study-header">
-                <Briefcase size={20} className="case-study-icon" />
-                <span>Corporate Law Firm</span>
-              </div>
-              <h3 className="case-study-main-title">Hijacked Listing & Brand Identity Restored</h3>
+              <h3 className="case-study-main-title">Video Verification Success After Repeated Failures</h3>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4><AlertTriangle size={18} /> The Challenge</h4>
-                  <p>A prestigious law firm's main office listing was hijacked by a malicious actor who changed the firm's name, phone, and website, redirecting valuable leads to a competitor.</p>
+                  <h4>Client Challenge</h4>
+                  <p>A business was stuck in a loop of failed video call verifications, unable to get their Google Business Profile verified despite multiple attempts. The client was unsure what was causing the rejections and lacked clarity on the verification process.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4><Zap size={18} /> The Solution</h4>
-                  <p>Immediately initiated an ownership conflict resolution process, providing legal documentation to prove ownership. The listing was restored within 24 hours and secured with advanced security settings.</p>
+                  <h4>What I Did</h4>
+                  <p>I analysed the profile and uncovered critical issues with account details that were likely causing verification failure. After fixing these gaps, I provided clear, step-by-step guidance on how to prepare for and complete the video verification properly. With everything aligned, the client successfully verified their profile on the next attempt.</p>
+                </div>
+              </div>
+            </div>
+            {/* Success Story 4 */}
+            <div className="case-study-card">
+              <h3 className="case-study-main-title">Reinstated After 2 Denied Appeals</h3>
+              <div className="case-study-details">
+                <div className="case-study-challenge">
+                  <h4>Client Challenge</h4>
+                  <p>A business profile remained suspended for months even after two appeals. Despite the profile meeting all visible guidelines, the client was stuck in limbo with no clear path to resolution.</p>
+                </div>
+                <div className="case-study-solution">
+                  <h4>What I Did</h4>
+                  <p>I conducted a thorough audit, identified subtle compliance issues that were being overlooked, and updated the profile accordingly. With a fresh appeal backed by guideline-aligned changes, the profile was reinstated within 48 hours, restoring full visibility and access.</p>
+                </div>
+              </div>
+            </div>
+            {/* Success Story 5 */}
+            <div className="case-study-card">
+              <h3 className="case-study-main-title">Turning a Dead Profile into a Local Ranking Asset</h3>
+              <div className="case-study-details">
+                <div className="case-study-challenge">
+                  <h4>Client Challenge</h4>
+                  <p>A newly created Google Business Profile was barely visible—no local rankings, low engagement, and no leads. The client wasn’t sure what was missing.</p>
+                </div>
+                <div className="case-study-solution">
+                  <h4>What I Did</h4>
+                  <p>I diagnosed the issue as poor optimization and lack of consistent updates. After updating the profile with complete business details, enhancing visuals, and setting up a routine of weekly Google Posts and updates, the profile gradually began gaining visibility, engagement, and better local rankings.</p>
+                </div>
+              </div>
+            </div>
+            {/* Success Story 6 */}
+            <div className="case-study-card">
+              <h3 className="case-study-main-title">Ads Weren’t Working? Now the Phone Won’t Stop Ringing</h3>
+              <div className="case-study-details">
+                <div className="case-study-challenge">
+                  <h4>Client Challenge</h4>
+                  <p>The brand was running ads through an agency but was facing high CPCs and zero quality leads. The client was losing faith in digital advertising altogether.</p>
+                </div>
+                <div className="case-study-solution">
+                  <h4>What I Did</h4>
+                  <p>My team ran a quick but honest audit, highlighting gaps in ad strategy, audience targeting, and conversion setup. We offered a refreshed multi-channel approach—blending Google Ads, Local Service Ads, email, and SMS marketing. Within a month, lead flow significantly improved, the phone started ringing again, and the brand finally saw ROI on their ad spend.</p>
                 </div>
               </div>
             </div>
@@ -426,7 +460,7 @@ export default function Home() {
             <div className="service-card">
               <div className="service-icon"><ShieldCheck /></div>
               <h3>Emergency Suspension Recovery</h3>
-              <p>Fast-track recovery for suspended profiles using advanced appeal strategies and direct Google contacts.</p>
+              <p>Expert help for suspended profiles: I quickly identify the root cause, guide you through the right steps, and maximize your chances of a successful reinstatement using proven Google compliance strategies.</p>
             </div>
 
             <div className="service-card">
@@ -438,7 +472,7 @@ export default function Home() {
             <div className="service-card">
               <div className="service-icon"><Factory /></div>
               <h3>Bulk Location Management</h3>
-              <p>Enterprise solutions for businesses with multiple locations and franchise operations.</p>
+              <p>Specialized support for businesses with 10+ locations: I prepare your accounts for bulk verification, clean up inconsistencies, and ensure you meet all of Google’s eligibility criteria for fast, hassle-free approval.</p>
             </div>
 
             <div className="service-card">
@@ -459,6 +493,14 @@ export default function Home() {
               <p>High-converting Google Ads campaigns designed to drive sales, walk-ins, and brand awareness.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <div className="container">
+          <h2 className="section-title">What My Clients Say</h2>
+          <p className="section-subtitle">Real feedback from business owners I've had the pleasure to work with.</p>
+          <TestimonialCarousel testimonials={testimonialsData} />
         </div>
       </section>
 
@@ -483,7 +525,7 @@ export default function Home() {
               <h3>Book a Free Call</h3>
               <p>Schedule a 15-min call to discuss your case directly.</p>
             </a>
-            <a href="https://wa.me/+911234567890" className="contact-card">
+            <a href="https://wa.me/+918828216807" className="contact-card">
               <div className="contact-icon"><Phone /></div>
               <h3>WhatsApp Now</h3>
               <p>Get an instant response for urgent suspension issues.</p>
@@ -527,27 +569,41 @@ export default function Home() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h4>Quick Links</h4>
-              <a href="#services">Services</a><br />
-              <a href="#case-studies">Success Stories</a><br />
-              <a href="#contact">Contact</a>
-            </div>
-            <div className="footer-section">
               <h4>Legal</h4>
-              <a href="#">Privacy Policy</a><br />
+              <a href="/privacy-policy">Privacy Policy</a><br />
               <a href="#">Terms of Service</a>
             </div>
             <div className="footer-section">
-              <h4>Connect</h4>
-              <a href="https://wa.me/+911234567890">WhatsApp</a><br />
-              <a href="https://www.linkedin.com/in/reddysohan/">LinkedIn</a>
+              <h4 style={{ textAlign: 'center', width: '100%' }}>Connect</h4>
+              <div className="footer-social-grid">
+                <a href="https://wa.me/+918828216807" aria-label="WhatsApp"><Phone size={28} /></a>
+                <a href="https://www.linkedin.com/in/reddysohan/" aria-label="LinkedIn"><Linkedin size={28} /></a>
+                <a href="https://www.facebook.com/sohan.reddy.716" aria-label="Facebook"><Facebook size={28} /></a>
+                <a href="https://www.instagram.com/reddy_sohan/" aria-label="Instagram"><Instagram size={28} /></a>
+                <a href="https://x.com/reddy__sohan" aria-label="Twitter"><Twitter size={28} /></a>
+                <a href="mailto:Reachsohanreddy@gmail.com" aria-label="Email"><Mail size={28} /></a>
+              </div>
+            </div>
+            <div className="footer-map">
+              <h4>Our Location</h4>
+              <p>Mumbai, Maharashtra, India</p>
+              <iframe
+                title="Mumbai Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160982607!2d72.74109995!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63fdc6cb1c7%3A0x1c1b1b1b1b1b1b1b!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                width="100%"
+                height="200"
+                style={{ border: 0, borderRadius: '12px', width: '100%', maxWidth: '340px', minHeight: '180px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
           <p>&copy; 2024 Sohan Reddy. All rights reserved.</p>
         </div>
       </footer>
 
-      <a href="https://wa.me/+911234567890" className="fab">
+      <a href="https://wa.me/+918828216807" className="fab">
         <MessageSquare />
       </a>
     </>

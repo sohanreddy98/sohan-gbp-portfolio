@@ -1,18 +1,29 @@
 "use client"
 
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { UserCircle2, Quote, ArrowLeft, ArrowRight } from 'lucide-react'
+import { UserCircle2, Quote } from 'lucide-react'
 
 export const TestimonialCarousel = ({ testimonials }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
+  // Auto-scroll every 4 seconds
+  useEffect(() => {
+    if (!emblaApi) return
+    const interval = setInterval(() => {
+      emblaApi.scrollNext()
+    }, 2500)
+    return () => clearInterval(interval)
   }, [emblaApi])
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
+  // Update selected index on scroll
+  useEffect(() => {
+    if (!emblaApi) return
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+    emblaApi.on('select', onSelect)
+    onSelect()
+    return () => emblaApi.off('select', onSelect)
   }, [emblaApi])
 
   return (
@@ -36,13 +47,13 @@ export const TestimonialCarousel = ({ testimonials }) => {
           ))}
         </div>
       </div>
-      <div className="embla__buttons">
-        <button className="embla__button embla__button--prev" onClick={scrollPrev}>
-          <ArrowLeft size={24} />
-        </button>
-        <button className="embla__button embla__button--next" onClick={scrollNext}>
-          <ArrowRight size={24} />
-        </button>
+      <div className="embla__dots">
+        {testimonials.map((_, idx) => (
+          <div
+            key={idx}
+            className={`embla__dot${selectedIndex === idx ? ' embla__dot--active' : ''}`}
+          />
+        ))}
       </div>
     </div>
   )

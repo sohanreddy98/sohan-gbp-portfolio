@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Google Business Profile Expert | Suspension Recovery & Verification Specialist',
+  title: 'Google Business Profile Expert | Suspension Recovery',
   description: 'Struggling with suspended profiles, pending verifications, or managing multiple locations? I help businesses worldwide restore their Google presence and dominate local search.',
 }
 
@@ -29,6 +29,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="canonical" href="/privacy-policy" />
+      </head>
       <body>
         <ThemeProvider
           attribute="class"
@@ -36,7 +39,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
