@@ -365,84 +365,179 @@ export default function Home() {
           <div className="case-studies-grid">
             {/* Success Story 1 */}
             <div className="case-study-card">
+              <div className="case-number">01</div>
               <h3 className="case-study-main-title">47 Locations Live in 72 Hours</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                72 Hours
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                47 Locations
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
-                  <p>A multi-state restaurant chain with 47 new locations was stuck in a verification loop for over 8 months. Standard methods failed repeatedly, and they were unable to access Google’s bulk verification, resulting in lost local visibility and millions in missed revenue.</p>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
+                  <p>A multi-state restaurant chain with 47 new locations was stuck in a verification loop for over 8 months. Standard methods failed repeatedly, and they were unable to access Google's bulk verification, resulting in lost local visibility and millions in missed revenue.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
-                  <p>I assessed the account’s eligibility, helped restructure the business profile to meet Google’s bulk verification standards, and prepared a master file for submission. With support from high-level partner channels, I escalated and executed a coordinated verification process, bringing all 47 profiles live within 72 hours.</p>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
+                  <p>I assessed the account's eligibility, helped restructure the business profile to meet Google's bulk verification standards, and prepared a master file for submission. With support from high-level partner channels, I escalated and executed a coordinated verification process, bringing all 47 profiles live within 72 hours.</p>
                 </div>
               </div>
             </div>
+            
             {/* Success Story 2 */}
             <div className="case-study-card">
+              <div className="case-number">02</div>
               <h3 className="case-study-main-title">Suspended Profiles Reinstated & Account Unlocked</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                48 Hours
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                Multiple Locations
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
-                  <p>A large business account faced a major roadblock, multiple Google Business Profiles across locations were suddenly suspended, and the account itself was restricted from making further edits or appeals. The client was unclear on the root cause and unable to manually appeal each profile, leading to stalled operations and loss of visibility across markets.</p>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
+                  <p>A large business account faced a major roadblock, multiple Google Business Profiles across locations were suddenly suspended, and the account itself was restricted from making further edits or appeals. The client was unclear on the root cause and unable to manually appeal each profile.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
-                  <p>I conducted a deep audit of the account and identified compliance gaps that had triggered the suspension. After cleaning up the account structure and resolving issues across all affected profiles, I guided the client through a streamlined fix. Within days, the account was reinstated and all suspended profiles were verified and live again, restoring full business presence on Google.</p>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
+                  <p>I conducted a deep audit of the account and identified compliance gaps that had triggered the suspension. After cleaning up the account structure and resolving issues across all affected profiles, I guided the client through a streamlined fix. Within days, the account was reinstated and all suspended profiles were verified and live again.</p>
                 </div>
               </div>
             </div>
+
             {/* Success Story 3 */}
             <div className="case-study-card">
+              <div className="case-number">03</div>
               <h3 className="case-study-main-title">Video Verification Success After Repeated Failures</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                48 Hours
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                Single Profile
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
                   <p>A business was stuck in a loop of failed video call verifications, unable to get their Google Business Profile verified despite multiple attempts. The client was unsure what was causing the rejections and lacked clarity on the verification process.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
                   <p>I analysed the profile and uncovered critical issues with account details that were likely causing verification failure. After fixing these gaps, I provided clear, step-by-step guidance on how to prepare for and complete the video verification properly. With everything aligned, the client successfully verified their profile on the next attempt.</p>
                 </div>
               </div>
             </div>
+
             {/* Success Story 4 */}
             <div className="case-study-card">
+              <div className="case-number">04</div>
               <h3 className="case-study-main-title">Reinstated After 2 Denied Appeals</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                48 Hours
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                Single Profile
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
                   <p>A business profile remained suspended for months even after two appeals. Despite the profile meeting all visible guidelines, the client was stuck in limbo with no clear path to resolution.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
                   <p>I conducted a thorough audit, identified subtle compliance issues that were being overlooked, and updated the profile accordingly. With a fresh appeal backed by guideline-aligned changes, the profile was reinstated within 48 hours, restoring full visibility and access.</p>
                 </div>
               </div>
             </div>
+
             {/* Success Story 5 */}
             <div className="case-study-card">
+              <div className="case-number">05</div>
               <h3 className="case-study-main-title">Turning a Dead Profile into a Local Ranking Asset</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                3 Months
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                Single Profile
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
                   <p>A newly created Google Business Profile was barely visible—no local rankings, low engagement, and no leads. The client wasn’t sure what was missing.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
                   <p>I diagnosed the issue as poor optimization and lack of consistent updates. After updating the profile with complete business details, enhancing visuals, and setting up a routine of weekly Google Posts and updates, the profile gradually began gaining visibility, engagement, and better local rankings.</p>
                 </div>
               </div>
             </div>
+
             {/* Success Story 6 */}
             <div className="case-study-card">
+              <div className="case-number">06</div>
               <h3 className="case-study-main-title">Ads Weren’t Working? Now the Phone Won’t Stop Ringing</h3>
+              <div className="metric-badge">
+                <Clock size={16} />
+                1 Month
+              </div>
+              <div className="metric-badge">
+                <Building2 size={16} />
+                Single Profile
+              </div>
               <div className="case-study-details">
                 <div className="case-study-challenge">
-                  <h4>Client Challenge</h4>
+                  <h4>
+                    <AlertTriangle size={18} />
+                    Client Challenge
+                  </h4>
                   <p>The brand was running ads through an agency but was facing high CPCs and zero quality leads. The client was losing faith in digital advertising altogether.</p>
                 </div>
                 <div className="case-study-solution">
-                  <h4>What I Did</h4>
+                  <h4>
+                    <Zap size={18} />
+                    What I Did
+                  </h4>
                   <p>My team ran a quick but honest audit, highlighting gaps in ad strategy, audience targeting, and conversion setup. We offered a refreshed multi-channel approach—blending Google Ads, Local Service Ads, email, and SMS marketing. Within a month, lead flow significantly improved, the phone started ringing again, and the brand finally saw ROI on their ad spend.</p>
                 </div>
               </div>
