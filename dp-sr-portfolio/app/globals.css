@@ -1010,48 +1010,60 @@ nav {
 
 /* Newsletter Section */
 .newsletter {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    padding: 6rem 0;
-    text-align: center;
+  background: #4285F4;
+  padding: 5rem 0;
+  color: #fff;
 }
 
+.dark .newsletter {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.newsletter .section-title,
 .newsletter .section-subtitle {
-    color: hsl(var(--primary-foreground) / 0.8);
+  color: #fff !important;
 }
 
 .newsletter-form {
-    max-width: 500px;
-    margin: 2rem auto 0;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .newsletter-input {
-    flex: 1;
-    min-width: 250px;
-    padding: 14px;
-    border: 1px solid transparent;
-    border-radius: var(--radius);
-    font-size: 1rem;
+  flex: 1;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
 }
 
 .newsletter-btn {
-    background: hsl(var(--primary-foreground));
-    color: hsl(var(--primary));
-    padding: 14px 28px;
-    border: none;
-    border-radius: var(--radius);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
+  background: #34A853;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .newsletter-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: #0c8b3c;
+}
+
+.dark .newsletter-input {
+  background: #222;
+  color: #fff;
+}
+
+.dark .newsletter-btn {
+  background: #4285F4;
+  color: #fff;
 }
 
 /* Contact Section */
