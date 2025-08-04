@@ -597,14 +597,30 @@ nav {
   background: #e0e0e0;
   opacity: 0.5;
   transition: background 0.3s, opacity 0.3s;
+  cursor: pointer;
+  border: none;
+  padding: 0;
 }
+
+.embla__dot:hover {
+  background: #4285F4;
+  opacity: 0.8;
+}
+
 .embla__dot--active {
   background: #4285F4;
   opacity: 1;
 }
+
 .dark .embla__dot {
   background: #333;
 }
+
+.dark .embla__dot:hover {
+  background: #4285F4;
+  opacity: 0.8;
+}
+
 .dark .embla__dot--active {
   background: #4285F4;
 }

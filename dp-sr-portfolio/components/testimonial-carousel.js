@@ -26,6 +26,11 @@ export const TestimonialCarousel = ({ testimonials }) => {
     return () => emblaApi.off('select', onSelect)
   }, [emblaApi])
 
+  // Function to scroll to specific slide when dot is clicked
+  const scrollTo = useCallback((index) => {
+    if (emblaApi) emblaApi.scrollTo(index)
+  }, [emblaApi])
+
   return (
     <div className="testimonial-carousel">
       <div className="embla" ref={emblaRef}>
@@ -49,9 +54,12 @@ export const TestimonialCarousel = ({ testimonials }) => {
       </div>
       <div className="embla__dots">
         {testimonials.map((_, idx) => (
-          <div
+          <button
             key={idx}
             className={`embla__dot${selectedIndex === idx ? ' embla__dot--active' : ''}`}
+            onClick={() => scrollTo(idx)}
+            type="button"
+            aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
       </div>
