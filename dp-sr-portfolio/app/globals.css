@@ -842,6 +842,20 @@ nav {
     top: 1rem;
     right: 1rem;
   }
+  
+  .problem-card {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+  
+  .problem-card:hover h3 {
+    transform: translateY(-15px);
+    font-size: 1rem;
+  }
+  
+  .problem-card:hover p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Recognition Section */
@@ -931,15 +945,23 @@ nav {
     background: hsl(var(--card));
     padding: 2rem;
     border-radius: var(--radius);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     border: 1px solid hsl(var(--border));
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .problem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     border-color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.02);
 }
 
 .problem-icon {
@@ -952,6 +974,13 @@ nav {
     justify-content: center;
     margin-bottom: 1.5rem;
     color: hsl(var(--destructive));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+}
+
+.problem-card:hover .problem-icon {
+    transform: scale(1.1);
+    margin-bottom: 1rem;
 }
 
 .problem-icon.google-red {
@@ -983,6 +1012,54 @@ nav {
 .problem-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.problem-card p {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+}
+
+.problem-card:hover h3 {
+    transform: translateY(-20px);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Color variants for problem card titles on hover */
+.problem-card:hover .problem-icon.google-blue + h3,
+.problem-card:hover .problem-icon.google-blue ~ h3 {
+    color: #4285F4;
+}
+
+.problem-card:hover .problem-icon.google-red + h3,
+.problem-card:hover .problem-icon.google-red ~ h3 {
+    color: #EA4335;
+}
+
+.problem-card:hover .problem-icon.google-yellow + h3,
+.problem-card:hover .problem-icon.google-yellow ~ h3 {
+    color: #FBBC05;
+}
+
+.problem-card:hover .problem-icon.google-green + h3,
+.problem-card:hover .problem-icon.google-green ~ h3 {
+    color: #34A853;
+}
+
+.problem-card:hover p {
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 0.5rem;
 }
 
 /* Services Section */
