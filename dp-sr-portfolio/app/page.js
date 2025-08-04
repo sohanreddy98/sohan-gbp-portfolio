@@ -600,11 +600,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 1 ? 'active' : ''}`} data-case="1">
                 <h3 className="case-detail-title">47 Locations Live in 72 Hours</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-blue">
                     <Clock size={16} />
                     72 Hours
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-blue">
                     <Building2 size={16} />
                     47 Locations
                   </div>
@@ -624,11 +624,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 2 ? 'active' : ''}`} data-case="2">
                 <h3 className="case-detail-title">Suspended Profiles Reinstated & Account Unlocked</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-red">
                     <Clock size={16} />
                     48 Hours
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-red">
                     <Building2 size={16} />
                     Multiple Locations
                   </div>
@@ -648,11 +648,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 3 ? 'active' : ''}`} data-case="3">
                 <h3 className="case-detail-title">Video Verification Success After Repeated Failures</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-yellow">
                     <Clock size={16} />
                     48 Hours
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-yellow">
                     <Building2 size={16} />
                     Single Profile
                   </div>
@@ -672,11 +672,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 4 ? 'active' : ''}`} data-case="4">
                 <h3 className="case-detail-title">Reinstated After 2 Denied Appeals</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-green">
                     <Clock size={16} />
                     48 Hours
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-green">
                     <Building2 size={16} />
                     Single Profile
                   </div>
@@ -696,11 +696,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 5 ? 'active' : ''}`} data-case="5">
                 <h3 className="case-detail-title">Turning a Dead Profile into a Local Ranking Asset</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-purple">
                     <Clock size={16} />
                     3 Months
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-purple">
                     <Building2 size={16} />
                     Single Profile
                   </div>
@@ -720,11 +720,11 @@ ${body}`;
               <div className={`case-detail ${activeCase === 6 ? 'active' : ''}`} data-case="6">
                 <h3 className="case-detail-title">Ads Weren't Working? Now the Phone Won't Stop Ringing</h3>
                 <div className="case-detail-metrics">
-                  <div className="metric-badge">
+                  <div className="metric-badge google-orange">
                     <Clock size={16} />
                     1 Month
                   </div>
-                  <div className="metric-badge">
+                  <div className="metric-badge google-orange">
                     <Building2 size={16} />
                     Single Profile
                   </div>
