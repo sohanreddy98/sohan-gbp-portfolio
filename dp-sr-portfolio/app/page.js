@@ -469,7 +469,7 @@ ${body}`;
               <p className="section-subtitle" style={{ textAlign: 'left', maxWidth: '100%', marginBottom: '2rem' }}>
                 For over a decade, I've been navigating the complex and ever-changing landscape of Google Business Profile. My journey began with a simple goal: to help businesses claim their rightful space in the digital world. Today, as a Google Product Expert, I've had the privilege of restoring thousands of profiles, verifying businesses across the globe, and empowering companies to thrive in local search.
               </p>
-              <p>
+              <p className="section-subtitle" style={{ textAlign: 'left', maxWidth: '100%' }}>
                 My approach is a blend of technical expertise, strategic thinking, and a relentless pursuit of solutions. I don't just fix problems; I build resilient, optimized presences that stand the test of time and algorithm updates. When you work with me, you're not just getting a consultant—you're getting a dedicated partner committed to your success.
               </p>
             </div>
