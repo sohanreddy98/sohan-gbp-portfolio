@@ -10,6 +10,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TestimonialCarousel } from '@/components/testimonial-carousel'
+import EmailModal from '@/components/email-modal'
 import { useState } from 'react'
 
 // Custom WhatsApp Icon Component
@@ -99,6 +100,8 @@ export default function Home() {
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [activeCase, setActiveCase] = useState(null);
   const [hasEnteredSection, setHasEnteredSection] = useState(false);
+  const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [emailModalType, setEmailModalType] = useState('email');
 
   const handleWhatsAppCall = (e) => {
     e.preventDefault();
@@ -174,75 +177,9 @@ export default function Home() {
   };
 
   // Function to copy email template to clipboard
-  const copyEmailTemplate = (type) => {
-    let subject, body;
-    
-    if (type === 'call') {
-      subject = 'Book 15-Min Free Consultation Call - Google Business Profile Expert';
-      body = `Hi Sohan,
-
-I hope this email finds you well. I would like to schedule a 15-minute free consultation call to discuss my Google Business Profile challenges.
-
-My details:
-- Name: [Your Name]
-- Business Name: [Your Business Name]
-- Issue Type: [Suspension/Verification/Bulk Management/Other]
-- Preferred Call Time: [Your preferred time and date]
-
-Brief description of my issue:
-[Please provide a brief overview of your Google Business Profile challenge]
-
-Community post link: [If you have started a thread on Community forum please share the link of the post for reference]
-
-I look forward to hearing from you and getting expert guidance on resolving this issue.
-
-Best regards,
-[Your Name]
-[Your Phone Number]`;
-    } else {
-      subject = 'Google Business Profile Expert Consultation Request';
-      body = `Hi Sohan,
-
-I hope this email finds you well. I am reaching out regarding my Google Business Profile and would appreciate your expert guidance.
-
-My details:
-- Name: [Your Name]
-- Business Name: [Your Business Name]
-- Business Type: [Your Industry/Sector]
-- Location: [Your City/State]
-
-Current situation:
-- Issue Type: [Suspension/Verification/Bulk Management/Profile Optimization/Other]
-- When did this start? [Date or timeframe]
-- Urgency: [High/Medium/Low]
-
-Detailed description of my issue:
-[Please provide a detailed description of your Google Business Profile challenge, including any error messages or specific problems you're facing]
-
-What I hope to achieve:
-[Describe your goals and what you hope to accomplish]
-
-I would appreciate your expert advice on the best approach to resolve this issue.
-
-Best regards,
-[Your Name]
-[Your Phone Number]
-[Your Email Address]`;
-    }
-
-    // Create complete email template
-    const emailTemplate = `To: Reachsohanreddy@gmail.com
-Subject: ${subject}
-
-${body}`;
-
-    // Copy to clipboard
-    navigator.clipboard.writeText(emailTemplate).then(() => {
-      alert('✅ Email template copied to clipboard!\n\n📧 Now open your email app (Gmail, Outlook, Apple Mail, etc.) and paste it there.\n\n📝 Just fill in the [bracketed] information and send!');
-    }).catch(() => {
-      // Fallback if clipboard fails
-      alert(`📧 Email Template:\n\n${emailTemplate}\n\n📋 Please copy this and paste it in your email app.`);
-    });
+  const handleEmailModal = (type) => {
+    setEmailModalType(type);
+    setEmailModalOpen(true);
   };
 
   return (
@@ -1104,7 +1041,7 @@ ${body}`;
               className="contact-card"
               onClick={(e) => {
                 e.preventDefault();
-                copyEmailTemplate('call');
+                handleEmailModal('call');
               }}
             >
               <div className="contact-icon"><Calendar /></div>
@@ -1121,7 +1058,7 @@ ${body}`;
               className="contact-card"
               onClick={(e) => {
                 e.preventDefault();
-                copyEmailTemplate('email');
+                handleEmailModal('email');
               }}
             >
               <div className="contact-icon"><Mail /></div>
@@ -1207,6 +1144,13 @@ ${body}`;
       <a href="#" className="fab" onClick={handleWhatsAppCall}>
         <WhatsAppIcon />
       </a>
+
+      {/* Email Modal */}
+      <EmailModal 
+        isOpen={emailModalOpen}
+        onClose={() => setEmailModalOpen(false)}
+        emailType={emailModalType}
+      />
     </>
   )
 } 

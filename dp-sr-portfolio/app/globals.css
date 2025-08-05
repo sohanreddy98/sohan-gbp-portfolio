@@ -1753,6 +1753,53 @@ img, .about-image {
 }
 @media (max-width: 768px) {
   .hamburger { display: flex; }
+}
+
+/* Email Modal Styles */
+.email-modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.email-modal-content {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .email-modal-content {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Modal input focus styles */
+.email-modal-content input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+.dark .email-modal-content input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Modal button hover effects */
+.email-modal-content button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+/* Success animation */
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.success-icon {
+  animation: successPulse 2s ease-in-out infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 } 
 
 .google-blue { color: #4285F4 !important; }
