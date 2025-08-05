@@ -942,7 +942,10 @@ nav {
 }
 
 .problem-card {
-    background: hsl(var(--card));
+    background-image: url('/check.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 2rem;
     border-radius: var(--radius);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -957,11 +960,42 @@ nav {
     text-align: center;
 }
 
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0.5px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.dark .problem-card::before {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.problem-card > * {
+    position: relative;
+    z-index: 2;
+}
+
 .problem-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     border-color: hsl(var(--primary));
     background: hsl(var(--primary) / 0.02);
+}
+
+.problem-card:hover::before {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(0px);
+}
+
+.dark .problem-card:hover::before {
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .problem-icon {
@@ -1552,6 +1586,15 @@ footer {
 .fab:hover {
     transform: scale(1.1) rotate(10deg);
     box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
+}
+
+/* Call button specific styling */
+.fab svg {
+    transition: transform 0.3s ease;
+}
+
+.fab:hover svg {
+    transform: scale(1.1);
 }
 
 /* Switch Styles */

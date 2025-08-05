@@ -50,6 +50,24 @@ export default function Home() {
   const [activeCase, setActiveCase] = useState(null);
   const [hasEnteredSection, setHasEnteredSection] = useState(false);
 
+  const handleWhatsAppCall = (e) => {
+    e.preventDefault();
+    
+    // Check if user is on mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, directly initiate WhatsApp call
+      window.location.href = 'https://wa.me/+918828216807?text=Hi%20Sohan,%20I%20need%20help%20with%20my%20Google%20Business%20Profile.%20Can%20we%20talk?';
+    } else {
+      // On desktop/website, ask user to make a call
+      const shouldCall = confirm('Would you like to make a WhatsApp call to Sohan?\n\nClick OK to open WhatsApp and start a call.');
+      if (shouldCall) {
+        window.open('https://wa.me/+918828216807?text=Hi%20Sohan,%20I%20need%20help%20with%20my%20Google%20Business%20Profile.%20Can%20we%20talk?', '_blank');
+      }
+    }
+  };
+
   const handleCaseHover = (caseNumber) => {
     setActiveCase(caseNumber);
     setHasEnteredSection(true);
@@ -924,8 +942,8 @@ ${body}`;
         </div>
       </footer>
 
-      <a href="https://wa.me/+918828216807" className="fab">
-        <MessageSquare />
+      <a href="#" className="fab" onClick={handleWhatsAppCall}>
+        <Phone />
       </a>
     </>
   )
