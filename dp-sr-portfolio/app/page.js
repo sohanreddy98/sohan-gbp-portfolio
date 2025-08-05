@@ -4,7 +4,7 @@ import {
   Award, BarChart, Briefcase, Calendar, CheckCircle, Clock, Coins, Factory,
   Globe, HeartHandshake, HelpCircle, LifeBuoy, Linkedin, LocateFixed, Lock,
   Mail, Phone, Rocket, ShieldCheck, Sparkles, Star, Target, ThumbsUp, MapPin,
-  TrendingUp, UserCheck, Verified, Waves, UserCircle2, Quote, MessageSquare, XCircle, Building2, Network, Diamond, ArrowLeft, ArrowRight, Zap, AlertTriangle, Facebook, Instagram, Twitter
+  TrendingUp, UserCheck, Verified, Waves, UserCircle2, Quote, MessageSquare, XCircle, Building2, Network, Diamond, ArrowLeft, ArrowRight, Zap, AlertTriangle, Facebook, Instagram, Twitter, MessageCircle
 } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
@@ -71,6 +71,13 @@ export default function Home() {
   const handleCaseHover = (caseNumber) => {
     setActiveCase(caseNumber);
     setHasEnteredSection(true);
+  };
+
+  const handleCaseClick = (caseNumber) => {
+    // For mobile, toggle the case study
+    if (window.innerWidth <= 768) {
+      setActiveCase(activeCase === caseNumber ? null : caseNumber);
+    }
   };
 
   const handleSectionEnter = () => {
@@ -204,10 +211,10 @@ ${body}`;
             </ul>
             <div className="cta-header">
               <a href="https://wa.me/+918828216807" className="whatsapp-btn">
-                <Phone size={16} /> WhatsApp
+                <MessageCircle size={16} /> <span className="btn-text">WhatsApp</span>
               </a>
               <a href="https://www.linkedin.com/in/reddysohan/" className="linkedin-btn">
-                <Linkedin size={16} /> LinkedIn
+                <Linkedin size={16} /> <span className="btn-text">LinkedIn</span>
               </a>
               <ThemeToggle />
             </div>
@@ -231,7 +238,7 @@ ${body}`;
                 <ShieldCheck size={20} /> Get Free Expert Analysis
               </a>
               <a href="https://wa.me/+918828216807" className="cta-secondary">
-                <MessageSquare size={20} /> WhatsApp Me Now
+                <MessageCircle size={20} /> WhatsApp Me Now
               </a>
             </div>
           </div>
@@ -508,12 +515,13 @@ ${body}`;
             className={`case-studies-split-layout ${hasEnteredSection ? 'has-entered' : ''}`}
             onMouseEnter={handleSectionEnter}
           >
-            {/* Left Side - Case Study List */}
-            <div className="case-studies-list">
+            {/* Desktop: Left Side - Case Study List */}
+            <div className="case-studies-list desktop-only">
               <div 
                 className={`case-study-item case-color-1 ${activeCase === 1 ? 'active' : ''}`} 
                 data-case="1"
                 onMouseEnter={() => handleCaseHover(1)}
+                onClick={() => handleCaseClick(1)}
               >
                 <div className="case-number">01</div>
                 <div className="case-content">
@@ -530,6 +538,7 @@ ${body}`;
                 className={`case-study-item case-color-2 ${activeCase === 2 ? 'active' : ''}`} 
                 data-case="2"
                 onMouseEnter={() => handleCaseHover(2)}
+                onClick={() => handleCaseClick(2)}
               >
                 <div className="case-number">02</div>
                 <div className="case-content">
@@ -546,6 +555,7 @@ ${body}`;
                 className={`case-study-item case-color-3 ${activeCase === 3 ? 'active' : ''}`} 
                 data-case="3"
                 onMouseEnter={() => handleCaseHover(3)}
+                onClick={() => handleCaseClick(3)}
               >
                 <div className="case-number">03</div>
                 <div className="case-content">
@@ -562,6 +572,7 @@ ${body}`;
                 className={`case-study-item case-color-4 ${activeCase === 4 ? 'active' : ''}`} 
                 data-case="4"
                 onMouseEnter={() => handleCaseHover(4)}
+                onClick={() => handleCaseClick(4)}
               >
                 <div className="case-number">04</div>
                 <div className="case-content">
@@ -578,6 +589,7 @@ ${body}`;
                 className={`case-study-item case-color-5 ${activeCase === 5 ? 'active' : ''}`} 
                 data-case="5"
                 onMouseEnter={() => handleCaseHover(5)}
+                onClick={() => handleCaseClick(5)}
               >
                 <div className="case-number">05</div>
                 <div className="case-content">
@@ -594,6 +606,7 @@ ${body}`;
                 className={`case-study-item case-color-6 ${activeCase === 6 ? 'active' : ''}`} 
                 data-case="6"
                 onMouseEnter={() => handleCaseHover(6)}
+                onClick={() => handleCaseClick(6)}
               >
                 <div className="case-number">06</div>
                 <div className="case-content">
@@ -607,8 +620,8 @@ ${body}`;
               </div>
             </div>
 
-            {/* Right Side - Case Study Details */}
-            <div className="case-study-details-panel">
+            {/* Desktop: Right Side - Case Study Details */}
+            <div className="case-study-details-panel desktop-only">
               {activeCase === null && (
                 <div className="case-detail-placeholder">
                   <h3>Select a Case Study</h3>
@@ -760,6 +773,195 @@ ${body}`;
               </div>
             </div>
           </div>
+
+          {/* Mobile: Accordion-style Case Studies */}
+          <div className="mobile-case-studies">
+            <div 
+              className={`mobile-case-item ${activeCase === 1 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(1)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">01</div>
+                <div className="mobile-case-title">47 Locations Live in 72 Hours</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 1 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 1 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-blue">
+                    <Clock size={16} />
+                    72 Hours
+                  </div>
+                  <div className="metric-badge google-blue">
+                    <Building2 size={16} />
+                    47 Locations
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>A multi-state restaurant chain with 47 new locations was stuck in a verification loop for over 8 months. Standard methods failed repeatedly, and they were unable to access Google's bulk verification, resulting in lost local visibility and millions in missed revenue.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>I assessed the account's eligibility, helped restructure the business profile to meet Google's bulk verification standards, and prepared a master file for submission. With support from high-level partner channels, I escalated and executed a coordinated verification process, bringing all 47 profiles live within 72 hours.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`mobile-case-item ${activeCase === 2 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(2)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">02</div>
+                <div className="mobile-case-title">Suspended Profiles Reinstated</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 2 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 2 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-red">
+                    <Clock size={16} />
+                    48 Hours
+                  </div>
+                  <div className="metric-badge google-red">
+                    <Building2 size={16} />
+                    Multiple Locations
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>A large business account faced a major roadblock, multiple Google Business Profiles across locations were suddenly suspended, and the account itself was restricted from making further edits or appeals. The client was unclear on the root cause and unable to manually appeal each profile.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>I conducted a deep audit of the account and identified compliance gaps that had triggered the suspension. After cleaning up the account structure and resolving issues across all affected profiles, I guided the client through a streamlined fix. Within days, the account was reinstated and all suspended profiles were verified and live again.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`mobile-case-item ${activeCase === 3 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(3)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">03</div>
+                <div className="mobile-case-title">Video Verification Success</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 3 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 3 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-yellow">
+                    <Clock size={16} />
+                    48 Hours
+                  </div>
+                  <div className="metric-badge google-yellow">
+                    <Building2 size={16} />
+                    Single Profile
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>A business was stuck in a loop of failed video call verifications, unable to get their Google Business Profile verified despite multiple attempts. The client was unsure what was causing the rejections and lacked clarity on the verification process.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>I analysed the profile and uncovered critical issues with account details that were likely causing verification failure. After fixing these gaps, I provided clear, step-by-step guidance on how to prepare for and complete the video verification properly. With everything aligned, the client successfully verified their profile on the next attempt.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`mobile-case-item ${activeCase === 4 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(4)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">04</div>
+                <div className="mobile-case-title">Reinstated After 2 Denied Appeals</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 4 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 4 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-green">
+                    <Clock size={16} />
+                    48 Hours
+                  </div>
+                  <div className="metric-badge google-green">
+                    <Building2 size={16} />
+                    Single Profile
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>A business had their Google Business Profile suspended and had already submitted two appeals that were denied. They were losing hope and considering starting over with a new profile, which would mean losing all their reviews and ranking history.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>I reviewed the previous appeals and identified the specific issues that were causing the denials. I helped the client prepare a comprehensive appeal that addressed all the concerns and provided additional documentation. Within 48 hours, the profile was reinstated with all reviews and ranking history intact.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`mobile-case-item ${activeCase === 5 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(5)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">05</div>
+                <div className="mobile-case-title">Dead Profile to Ranking Asset</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 5 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 5 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-purple">
+                    <Clock size={16} />
+                    3 Months
+                  </div>
+                  <div className="metric-badge google-purple">
+                    <Building2 size={16} />
+                    Single Profile
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>A business had a Google Business Profile that was technically live but completely invisible in search results. They were not ranking for any relevant keywords and were losing customers to competitors who were visible in local search.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>I conducted a comprehensive audit and identified multiple optimization opportunities. I helped the client implement strategic changes to their profile, including better categorization, optimized content, and improved local SEO practices. Over three months, the profile went from invisible to ranking in the top 3 for their main keywords.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`mobile-case-item ${activeCase === 6 ? 'active' : ''}`}
+              onClick={() => handleCaseClick(6)}
+            >
+              <div className="mobile-case-header">
+                <div className="mobile-case-number">06</div>
+                <div className="mobile-case-title">Phone Won't Stop Ringing</div>
+                <ArrowRight size={20} className={`mobile-arrow ${activeCase === 6 ? 'rotated' : ''}`} />
+              </div>
+              <div className={`mobile-case-content ${activeCase === 6 ? 'expanded' : ''}`}>
+                <div className="mobile-case-metrics">
+                  <div className="metric-badge google-orange">
+                    <Clock size={16} />
+                    1 Month
+                  </div>
+                  <div className="metric-badge google-orange">
+                    <Building2 size={16} />
+                    Single Profile
+                  </div>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><AlertTriangle size={18} /> Client Challenge</h4>
+                  <p>The brand was running ads through an agency but was facing high CPCs and zero quality leads. The client was losing faith in digital advertising altogether.</p>
+                </div>
+                <div className="mobile-case-detail-section">
+                  <h4><Zap size={18} /> What I Did</h4>
+                  <p>My team ran a quick but honest audit, highlighting gaps in ad strategy, audience targeting, and conversion setup. We offered a refreshed multi-channel approach—blending Google Ads, Local Service Ads, email, and SMS marketing. Within a month, lead flow significantly improved, the phone started ringing again, and the brand finally saw ROI on their ad spend.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -858,7 +1060,7 @@ ${body}`;
               <p>Schedule a 15-min call to discuss your case directly.</p>
             </a>
             <a href="https://wa.me/+918828216807" className="contact-card">
-              <div className="contact-icon"><Phone /></div>
+              <div className="contact-icon"><MessageCircle /></div>
               <h3>WhatsApp Now</h3>
               <p>Get an instant response for urgent suspension issues.</p>
             </a>
@@ -915,7 +1117,7 @@ ${body}`;
             <div className="footer-section">
               <h4 style={{ textAlign: 'center', width: '100%' }}>Connect</h4>
               <div className="footer-social-grid">
-                <a href="https://wa.me/+918828216807" aria-label="WhatsApp"><Phone size={28} /></a>
+                <a href="https://wa.me/+918828216807" aria-label="WhatsApp"><MessageCircle size={28} /></a>
                 <a href="https://www.linkedin.com/in/reddysohan/" aria-label="LinkedIn"><Linkedin size={28} /></a>
                 <a href="https://www.facebook.com/sohan.reddy.716" aria-label="Facebook"><Facebook size={28} /></a>
                 <a href="https://www.instagram.com/reddy_sohan/" aria-label="Instagram"><Instagram size={28} /></a>
@@ -943,7 +1145,7 @@ ${body}`;
       </footer>
 
       <a href="#" className="fab" onClick={handleWhatsAppCall}>
-        <Phone />
+        <MessageCircle />
       </a>
     </>
   )
