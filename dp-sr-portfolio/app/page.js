@@ -11,6 +11,8 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TestimonialCarousel } from '@/components/testimonial-carousel'
 import EmailModal from '@/components/email-modal'
+import SuccessModal from '@/components/success-modal'
+import { sendConsultationEmail } from '@/utils/email-service'
 import { useState } from 'react'
 
 // Custom WhatsApp Icon Component
@@ -102,6 +104,15 @@ export default function Home() {
   const [hasEnteredSection, setHasEnteredSection] = useState(false);
   const [emailModalOpen, setEmailModalOpen] = useState(false);
   const [emailModalType, setEmailModalType] = useState('email');
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [isSubmittingForm, setIsSubmittingForm] = useState(false);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleWhatsAppCall = (e) => {
     e.preventDefault();
@@ -180,6 +191,64 @@ export default function Home() {
   const handleEmailModal = (type) => {
     setEmailModalType(type);
     setEmailModalOpen(true);
+  };
+
+  const handleContactFormChange = (e) => {
+    const { name, value } = e.target;
+    setContactFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleContactFormSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!contactFormData.name || !contactFormData.email || !contactFormData.service) {
+      alert('Please fill in all required fields (Name, Email, and Service).');
+      return;
+    }
+
+    if (!contactFormData.email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmittingForm(true);
+
+    try {
+      // Send the detailed consultation email
+      await sendConsultationEmail({
+        name: contactFormData.name,
+        email: contactFormData.email,
+        service: contactFormData.service,
+        message: contactFormData.message
+      }, 'detailed');
+
+      // Show success modal
+      setSuccessMessage(`✅ Thank you! Your consultation request has been sent successfully.
+
+I'll review your details and get back to you within 24 hours with expert guidance.
+
+📧 Check your email for a confirmation message.`);
+      setSuccessModalOpen(true);
+      
+      // Reset form
+      setContactFormData({
+        name: '',
+        email: '',
+        service: '',
+        message: ''
+      });
+
+    } catch (error) {
+      setSuccessMessage(`❌ Failed to send your request. Please try again or contact me directly via WhatsApp.
+
+📱 You can reach me at: +91 8828216807`);
+      setSuccessModalOpen(true);
+    } finally {
+      setIsSubmittingForm(false);
+    }
   };
 
   return (
@@ -1067,18 +1136,38 @@ export default function Home() {
             </a>
           </div>
 
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleContactFormSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" name="name" required />
+              <label htmlFor="contact-name">Full Name *</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                value={contactFormData.name}
+                onChange={handleContactFormChange}
+                required 
+              />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
+              <label htmlFor="contact-email">Email Address *</label>
+              <input 
+                type="email" 
+                id="contact-email" 
+                name="email" 
+                value={contactFormData.email}
+                onChange={handleContactFormChange}
+                required 
+              />
             </div>
             <div className="form-group">
-              <label htmlFor="service">Service Needed</label>
-              <select id="service" name="service">
+              <label htmlFor="contact-service">Service Needed *</label>
+              <select 
+                id="contact-service" 
+                name="service"
+                value={contactFormData.service}
+                onChange={handleContactFormChange}
+                required
+              >
                 <option value="">Select a service...</option>
                 <option value="suspended">My Business Profile is Suspended</option>
                 <option value="verification-stuck">Verification is Stuck or Not Working</option>
@@ -1095,10 +1184,27 @@ export default function Home() {
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Briefly describe your issue</label>
-              <textarea id="message" name="message" rows="4"></textarea>
+              <label htmlFor="contact-message">Briefly describe your issue</label>
+              <textarea 
+                id="contact-message" 
+                name="message" 
+                rows="4"
+                value={contactFormData.message}
+                onChange={handleContactFormChange}
+                placeholder="Please provide details about your Google Business Profile issue..."
+              ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Get Expert Help Now</button>
+            <button 
+              type="submit" 
+              className="submit-btn"
+              disabled={isSubmittingForm}
+              style={{
+                opacity: isSubmittingForm ? 0.6 : 1,
+                cursor: isSubmittingForm ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {isSubmittingForm ? 'Sending...' : 'Get Expert Help Now'}
+            </button>
           </form>
         </div>
       </section>
@@ -1150,6 +1256,14 @@ export default function Home() {
         isOpen={emailModalOpen}
         onClose={() => setEmailModalOpen(false)}
         emailType={emailModalType}
+      />
+
+      {/* Success Modal */}
+      <SuccessModal 
+        isOpen={successModalOpen}
+        onClose={() => setSuccessModalOpen(false)}
+        message={successMessage}
+        title={successMessage.includes('❌') ? "Oops! Something went wrong" : "Request Sent Successfully!"}
       />
     </>
   )

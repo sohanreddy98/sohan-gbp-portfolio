@@ -22,6 +22,7 @@ export const sendConsultationEmail = async (userData, emailType) => {
       from_email: userData.email,
       email_type: emailType,
       consultation_date: new Date().toLocaleDateString(),
+      consultation_time: new Date().toLocaleTimeString(),
       user_agent: navigator.userAgent,
       referrer: document.referrer || 'Direct',
       page_url: window.location.href,
@@ -42,6 +43,28 @@ New consultation call request received:
 The client has requested a 15-minute free consultation call to discuss their Google Business Profile challenges.
 
 Please respond within 24 hours to schedule the call.
+
+---
+This email was automatically generated from your portfolio website.
+      `
+    } else if (emailType === 'detailed') {
+      templateParams.subject = '📋 New Detailed Consultation Request - Google Business Profile Expert'
+      templateParams.message = `
+New detailed consultation request received:
+
+👤 Client Name: ${userData.name}
+📧 Email: ${userData.email}
+🔧 Service Needed: ${userData.service}
+📅 Request Date: ${new Date().toLocaleDateString()}
+⏰ Request Time: ${new Date().toLocaleTimeString()}
+🌐 Source: ${window.location.href}
+
+📝 Issue Description:
+${userData.message || 'No additional details provided'}
+
+This client has submitted a detailed consultation request through your contact form. They have specified their exact service need and provided additional context about their issue.
+
+Please review their details and respond with comprehensive guidance within 24 hours.
 
 ---
 This email was automatically generated from your portfolio website.
