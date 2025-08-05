@@ -192,6 +192,8 @@ My details:
 Brief description of my issue:
 [Please provide a brief overview of your Google Business Profile challenge]
 
+Community post link: [If you have started a thread on Community forum please share the link of the post for reference]
+
 I look forward to hearing from you and getting expert guidance on resolving this issue.
 
 Best regards,
@@ -364,12 +366,12 @@ ${body}`;
                   <div className="stat-icon-wrapper google-blue">
                     <Globe size={36} className="stat-icon google-blue" />
                   </div>
-                  <h3 className="stat-number">India</h3>
-                  <p className="stat-title">Verification Specialist</p>
+                  <h3 className="stat-number">Verification Specialist</h3>
+                  <p className="stat-title">8+ Countries</p>
                 </div>
                 <div className="stat-back google-blue">
                   <h4>Specialized Expertise</h4>
-                  <p>Deep knowledge of regional verification challenges ensures your business gets listed correctly in India.</p>
+                  <p>Deep knowledge of regional verification challenges ensures your business gets listed correctly across multiple countries.</p>
                 </div>
               </div>
             </div>
@@ -1041,8 +1043,8 @@ ${body}`;
 
             <div className="service-card">
               <div className="service-icon google-green"><MapPin className="google-green" /></div>
-              <h3>India Region Specialist</h3>
-              <p>Specialized services for Indian businesses facing unique verification and compliance challenges.</p>
+              <h3>Verification Specialist</h3>
+              <p>Specialized services for businesses across 8+ countries facing unique verification and compliance challenges.</p>
             </div>
 
             <div className="service-card">
