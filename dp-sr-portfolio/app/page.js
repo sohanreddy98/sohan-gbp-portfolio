@@ -1140,11 +1140,19 @@ ${body}`;
             <div className="form-group">
               <label htmlFor="service">Service Needed</label>
               <select id="service" name="service">
-                <option>Suspension Recovery</option>
-                <option>Verification Help</option>
-                <option>Bulk Locations</option>
-                <option>Profile Optimization</option>
-                <option>Other</option>
+                <option value="">Select a service...</option>
+                <option value="suspended">My Business Profile is Suspended</option>
+                <option value="verification-stuck">Verification is Stuck or Not Working</option>
+                <option value="bulk-verification">I Need Bulk Verification for Multiple Locations</option>
+                <option value="phone-address-update">Phone Number / Address Update Issue</option>
+                <option value="poor-ranking">Poor Local Ranking or Visibility</option>
+                <option value="video-verification">Trouble with Video Verification</option>
+                <option value="incorrect-duplicate">Incorrect or Duplicate Listings</option>
+                <option value="fake-spam-profiles">Reporting Fake or Spam Profiles</option>
+                <option value="google-ads-leads">Google Ads Not Generating Leads</option>
+                <option value="general-help">General Google Business Profile Help</option>
+                <option value="consultation">Want to Book a Consultation</option>
+                <option value="something-else">Something Else (Please Specify)</option>
               </select>
             </div>
             <div className="form-group">

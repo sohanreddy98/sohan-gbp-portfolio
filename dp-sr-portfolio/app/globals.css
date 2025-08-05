@@ -182,9 +182,15 @@ nav {
 }
 
 .whatsapp-btn:hover {
-    background: var(--color-whatsapp);
+    background: #25D366;
     color: white;
-    border-color: var(--color-whatsapp);
+    border-color: #25D366;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover svg {
+    color: white;
 }
 
 .linkedin-btn:hover {
@@ -278,9 +284,15 @@ nav {
 }
 
 .cta-secondary:hover {
-    background: hsl(var(--accent));
-    border-color: hsl(var(--border));
-    transform: translateY(-3px);
+    background: #25D366;
+    color: white;
+    border-color: #25D366;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.cta-secondary:hover svg {
+    color: white;
 }
 
 /* Urgent Help Banner */
