@@ -128,6 +128,21 @@ nav {
     color: hsl(var(--primary));
 }
 
+.logo span {
+    background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: googleGradient 3s ease-in-out infinite;
+}
+
+@keyframes googleGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -1580,8 +1595,8 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+    background: #25D366;
+    color: white;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -1589,14 +1604,15 @@ footer {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 5px 15px hsl(var(--primary) / 0.2);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
     transition: all 0.3s;
     z-index: 1000;
 }
 
 .fab:hover {
     transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    background: #128C7E;
 }
 
 /* Call button specific styling */
@@ -1606,6 +1622,15 @@ footer {
 
 .fab:hover svg {
     transform: scale(1.1);
+}
+
+/* WhatsApp icon in floating action button */
+.fab svg path {
+    fill: white !important;
+}
+
+.fab:hover svg path {
+    fill: white !important;
 }
 
 /* Switch Styles */
